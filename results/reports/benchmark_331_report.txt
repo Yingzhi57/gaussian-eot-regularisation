@@ -1,0 +1,21 @@
+3.3.1 Gaussian benchmark (frozen G1 + dense reference + G3)
+geometry root 20260825 (frozen pilot pair); simulation roots 20260830/20260831/20260832
+R_ref=5000, R_confirm=5000 (extension to 10000 if normalized paired MCSE > 0.002)
+
+-- G1 d=5 (100,100) balanced kappa=4 noncommuting --
+   noncommutativity |[S1,S2]|/(|S1||S2|) = 0.13352
+   reference curve (15s): dense best m* = 10.875; production-grid best (diagnostic) = 11; range resolved (top pick False, 24->32 falling False)
+   confirmatory stage (33s): 5000 datasets, 0 failures
+   risk ratios vs m=0 (paired delta-method SE):
+      theory m=5        0.9605  (+/- 0.0006)
+      dense-ref best    0.9440  (+/- 0.0014)
+      grid-ref best     0.9440  (+/- 0.0014)
+      RBPB              0.9443  (+/- 0.0013)
+   RBPB gap vs dense-ref policy: +0.0002 (+/- 0.0001)
+   improvement P(L_RBPB < L0) = 0.689; zero rate 0.000; sentinel rate 0.000; sentinel-falling rate 0.000
+   selected multiplier: median 11, IQR [10, 11]; inner MCSE at pick median 1.74e-03; selector runtime median 0.006s at B=250
+   figure written: benchmark_331.pdf / .png
+
+code hashes:
+   benchmark_331.py: c3d913284044e1c61596665952df3b0b871e6255954817ba208b4bb12c68ddee
+   rbpb_selector.py: 05e73b47b2ab5326d2c5efe201ba2174f196fc36b95e22e1fba7bb596a17b96a

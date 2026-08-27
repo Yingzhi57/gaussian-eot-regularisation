@@ -1,0 +1,22 @@
+3.3.1 Gaussian benchmark (G2a variant: d = 5, n1 = n2 = 50 (small-sample check); protocol per frozen G3)
+geometry root 20260825 (frozen pilot pair); simulation roots 20260830/20260831/20260832
+R_ref=5000, R_confirm=5000 (extension to 10000 if normalized paired MCSE > 0.002)
+
+-- G2a d=5 (50,50) small-sample check --
+   noncommutativity |[S1,S2]|/(|S1||S2|) = 0.13352
+   reference curve (15s): dense best m* = 11.375; production-grid best (diagnostic) = 11; range resolved (top pick False, 24->32 falling False)
+   pre-authorised extension: normalized paired MCSE 0.0023 > 0.002 -> R_confirm = 10000
+   confirmatory stage (69s): 10000 datasets, 0 failures
+   risk ratios vs m=0 (paired delta-method SE):
+      theory m=5        0.9215  (+/- 0.0007)
+      dense-ref best    0.8897  (+/- 0.0015)
+      grid-ref best     0.8897  (+/- 0.0014)
+      RBPB              0.8905  (+/- 0.0013)
+   RBPB gap vs dense-ref policy: +0.0008 (+/- 0.0002)
+   improvement P(L_RBPB < L0) = 0.735; zero rate 0.000; sentinel rate 0.000; sentinel-falling rate 0.000
+   selected multiplier: median 10, IQR [10, 11]; inner MCSE at pick median 5.71e-03; selector runtime median 0.007s at B=250
+   figure written: benchmark_331_g2a.pdf / .png
+
+code hashes:
+   benchmark_g2a_331.py: b6825bee20737addcf593e7a12e464102aa5b27c6544645d0db2ec3f0b6d05da
+   rbpb_selector.py: 05e73b47b2ab5326d2c5efe201ba2174f196fc36b95e22e1fba7bb596a17b96a

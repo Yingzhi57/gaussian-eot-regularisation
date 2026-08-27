@@ -1,0 +1,39 @@
+3.3.3 heavy-tail sensitivity of the frozen Gaussian RBPB
+geometry: 3.3.2 G4-N pair (root 20260825); data roots 20260920/20260921; inner boot 20260922 with stage index
+R_ref=5000, R_confirm=10000 (fixed, no extension gate)
+
+-- t5 | rho=0.25 (48,192) --
+   reference (16s): valid 5000/5000, failures 0; m* = 31 (mean rule; mean-rule 31, median-rule 28.125); range UNRESOLVED
+   confirmatory (65s): 10000 ok, 0 failures
+   mean ratio 0.7270 (paired MCSE 0.0014); dense mean ratio 0.6789; gap vs dense +0.0481
+   paired ratio: median 0.7265, IQR [0.6366, 0.8580]; q90/q95/q99 1.019/1.119/1.316; worst 1.83
+   improve P(L_RBPB < L0) = 0.889; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 18, IQR [18, 18]
+
+-- t5 | rho=9 (216,24) --
+   reference (15s): valid 5000/5000, failures 0; m* = 1 (mean rule; mean-rule 1, median-rule 0); range resolved
+   confirmatory (65s): 10000 ok, 0 failures
+   mean ratio 0.9998 (paired MCSE 0.0000); dense mean ratio 0.9993; gap vs dense +0.0005
+   paired ratio: median 1.0000, IQR [1.0000, 1.0000]; q90/q95/q99 1.000/1.000/1.006; worst 1.02
+   improve P(L_RBPB < L0) = 0.031; zero 0.937; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- t3 | rho=0.25 (48,192) --
+   reference (15s): valid 5000/5000, failures 0; m* = 32 (median-ratio rule; mean-rule 32, median-rule 32); range UNRESOLVED
+   confirmatory (64s): 10000 ok, 0 failures
+   dense median ratio 0.6132; median RBPB-minus-dense normalized gap +0.0983
+   paired ratio: median 0.7128, IQR [0.6429, 0.8164]; q90/q95/q99 0.950/1.037/1.216; worst 1.58
+   improve P(L_RBPB < L0) = 0.932; zero 0.000; sentinel 0.001; falling-to-sentinel 0.000
+   m_rbpb median 18, IQR [18, 18]
+
+-- t3 | rho=9 (216,24) --
+   reference (15s): valid 5000/5000, failures 0; m* = 0 (median-ratio rule; mean-rule 5.875, median-rule 0); range resolved
+   confirmatory (64s): 10000 ok, 0 failures
+   dense median ratio 1.0000; median RBPB-minus-dense normalized gap +0.0000
+   paired ratio: median 1.0000, IQR [1.0000, 1.0000]; q90/q95/q99 1.000/1.000/1.006; worst 1.02
+   improve P(L_RBPB < L0) = 0.033; zero 0.934; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+code hashes:
+   heavy_333.py: 614ade977de2b11998a00124ccef0ca85c75a252a35e33132e3773b5c5f067c8
+   rbpb_selector.py: 05e73b47b2ab5326d2c5efe201ba2174f196fc36b95e22e1fba7bb596a17b96a

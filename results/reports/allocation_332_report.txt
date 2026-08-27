@@ -1,0 +1,160 @@
+3.3.2 allocation study (frozen 332-G1..G5)
+roots: geometry 20260825; reference/confirmatory/bootstrap 20260910/20260911/20260912
+R_ref=5000, R_confirm=5000 (extend to 10000 per cell if normalized paired MCSE > 0.002)
+   G4-C: cond 4, noncommutativity eta = 0.000000
+   G4-N: cond 4, noncommutativity eta = 0.133522
+   G4-K: cond 16, noncommutativity eta = 0.295693
+
+-- G4-C | rho=0.25 (48,192) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 18.75, grid best = 18, range resolved (top pick False, 24->32 falling False)
+   extension: normalized paired MCSE 0.0035 > 0.002 -> R_confirm = 10000
+   confirmatory (72s): 10000 ok, 0 failures
+   ratios vs m=0: KB 0.8418+/-0.0008; dense 0.7799+/-0.0018; RBPB 0.7804+/-0.0017   [m_KB = 8.6]
+   RBPB gap vs dense +0.0005+/-0.0001; improve 0.825; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 18, IQR [18, 18]
+
+-- G4-C | rho=1 (120,120) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 10.75, grid best = 11, range resolved (top pick False, 24->32 falling False)
+   confirmatory (34s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9654+/-0.0006; dense 0.9518+/-0.0014; RBPB 0.9518+/-0.0014   [m_KB = 5]
+   RBPB gap vs dense +0.0000+/-0.0001; improve 0.657; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 11, IQR [10, 11]
+
+-- G4-C | rho=3 (180,60) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 4.25, grid best = 4, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9927+/-0.0003; dense 0.9898+/-0.0006; RBPB 0.9902+/-0.0006   [m_KB = 2]
+   RBPB gap vs dense +0.0004+/-0.0001; improve 0.565; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 4, IQR [3, 4]
+
+-- G4-C | rho=7 (210,30) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 0.75, grid best = 0.5, range resolved (top pick False, 24->32 falling False)
+   confirmatory (34s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9997+/-0.0001; dense 0.9998+/-0.0001; RBPB 0.9996+/-0.0001   [m_KB = 0.5]
+   RBPB gap vs dense -0.0002+/-0.0001; improve 0.304; zero 0.360; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0.25, IQR [0, 0.5]
+
+-- G4-C | rho=9 (216,24) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0.25, grid best = 0.25, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0001; RBPB 0.9999+/-0.0000   [m_KB = 0.2]
+   RBPB gap vs dense -0.0001+/-0.0001; improve 0.055; zero 0.892; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-C | rho=11 (220,20) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0]
+   RBPB gap vs dense +0.0000+/-0.0000; improve 0.002; zero 0.995; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-C | rho=15 (225,15) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (35s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0]
+   RBPB gap vs dense +0.0000+/-0.0000; improve 0.000; zero 1.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-N | rho=0.25 (48,192) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 19, grid best = 18, range resolved (top pick False, 24->32 falling False)
+   extension: normalized paired MCSE 0.0032 > 0.002 -> R_confirm = 10000
+   confirmatory (69s): 10000 ok, 0 failures
+   ratios vs m=0: KB 0.8512+/-0.0008; dense 0.7900+/-0.0017; RBPB 0.7910+/-0.0016   [m_KB = 8.6]
+   RBPB gap vs dense +0.0010+/-0.0001; improve 0.825; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 18, IQR [18, 18]
+
+-- G4-N | rho=1 (120,120) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 11.125, grid best = 11, range resolved (top pick False, 24->32 falling False)
+   confirmatory (34s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9666+/-0.0006; dense 0.9525+/-0.0013; RBPB 0.9528+/-0.0012   [m_KB = 5]
+   RBPB gap vs dense +0.0004+/-0.0001; improve 0.673; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 11, IQR [10, 11]
+
+-- G4-N | rho=3 (180,60) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 4, grid best = 4, range resolved (top pick False, 24->32 falling False)
+   confirmatory (34s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9939+/-0.0003; dense 0.9918+/-0.0005; RBPB 0.9920+/-0.0005   [m_KB = 2]
+   RBPB gap vs dense +0.0002+/-0.0001; improve 0.566; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 4, IQR [3, 4]
+
+-- G4-N | rho=7 (210,30) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0.75, grid best = 1, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9999+/-0.0001; dense 0.9999+/-0.0001; RBPB 0.9999+/-0.0001   [m_KB = 0.5]
+   RBPB gap vs dense +0.0000+/-0.0001; improve 0.267; zero 0.444; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0.25, IQR [0, 0.5]
+
+-- G4-N | rho=9 (216,24) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (34s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0002+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0.2]
+   RBPB gap vs dense -0.0000+/-0.0000; improve 0.029; zero 0.935; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-N | rho=11 (220,20) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (34s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0]
+   RBPB gap vs dense +0.0000+/-0.0000; improve 0.001; zero 0.997; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-N | rho=15 (225,15) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0]
+   RBPB gap vs dense +0.0000+/-0.0000; improve 0.000; zero 1.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-K | rho=0.25 (48,192) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 20.625, grid best = 18, range resolved (top pick False, 24->32 falling False)
+   extension: normalized paired MCSE 0.0029 > 0.002 -> R_confirm = 10000
+   confirmatory (65s): 10000 ok, 0 failures
+   ratios vs m=0: KB 0.8847+/-0.0007; dense 0.8343+/-0.0017; RBPB 0.8360+/-0.0015   [m_KB = 8.6]
+   RBPB gap vs dense +0.0018+/-0.0002; improve 0.803; zero 0.000; sentinel 0.013; falling-to-sentinel 0.000
+   m_rbpb median 18, IQR [18, 18]
+
+-- G4-K | rho=1 (120,120) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 11, grid best = 11, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9758+/-0.0005; dense 0.9666+/-0.0011; RBPB 0.9668+/-0.0011   [m_KB = 5]
+   RBPB gap vs dense +0.0002+/-0.0001; improve 0.638; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 10, IQR [10, 11]
+
+-- G4-K | rho=3 (180,60) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 4.125, grid best = 4, range resolved (top pick False, 24->32 falling False)
+   confirmatory (32s): 5000 ok, 0 failures
+   ratios vs m=0: KB 0.9953+/-0.0002; dense 0.9938+/-0.0005; RBPB 0.9943+/-0.0004   [m_KB = 2]
+   RBPB gap vs dense +0.0005+/-0.0001; improve 0.553; zero 0.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 3, IQR [3, 4]
+
+-- G4-K | rho=7 (210,30) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0.5, grid best = 0.5, range resolved (top pick False, 24->32 falling False)
+   confirmatory (32s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0001; dense 1.0000+/-0.0001; RBPB 1.0000+/-0.0000   [m_KB = 0.5]
+   RBPB gap vs dense +0.0000+/-0.0001; improve 0.157; zero 0.667; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0.25]
+
+-- G4-K | rho=9 (216,24) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0002+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0.2]
+   RBPB gap vs dense +0.0000+/-0.0000; improve 0.008; zero 0.981; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-K | rho=11 (220,20) --
+   reference (15s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (33s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0]
+   RBPB gap vs dense -0.0000+/-0.0000; improve 0.000; zero 1.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+-- G4-K | rho=15 (225,15) --
+   reference (16s): valid 5000/5000, failures 0; m*_dense = 0, grid best = 0, range resolved (top pick False, 24->32 falling False)
+   confirmatory (32s): 5000 ok, 0 failures
+   ratios vs m=0: KB 1.0000+/-0.0000; dense 1.0000+/-0.0000; RBPB 1.0000+/-0.0000   [m_KB = 0]
+   RBPB gap vs dense +0.0000+/-0.0000; improve 0.000; zero 1.000; sentinel 0.000; falling-to-sentinel 0.000
+   m_rbpb median 0, IQR [0, 0]
+
+code hashes:
+   allocation_332.py: 8e2d4d95d600ea334f0adba74b4fbf610e73cc67a137838eef12059b0556af73
+   rbpb_selector.py: 05e73b47b2ab5326d2c5efe201ba2174f196fc36b95e22e1fba7bb596a17b96a

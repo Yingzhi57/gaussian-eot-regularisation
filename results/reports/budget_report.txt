@@ -1,0 +1,53 @@
+RBPB budget pilot (internal calibration; roots 20260825/20260828/20260829)
+grid (18 points, sentinel 24): [0.0, 0.25, 0.5, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 16.0, 18.0, 24.0]
+candidates [250, 500, 1000, 2000, 4000] as prefixes of B_ref=8000; independent evaluation at B=8000
+prefix agreement is optimistic by construction; the binding
+criterion is the independent-evaluation regret vs the B_ref pick.
+
+ P0 d=1 (100,100) scalar 
+   B_ref pick median 5; zero rate 0.00; sentinel rate 0.00; time 0.01s
+   B=  250: agree 0.20; regret med 8.97e-04, P90 3.09e-03 [PASS]; zero 0.00, sentinel 0.00; time 0.00s
+   B=  500: agree 0.33; regret med 7.29e-04, P90 1.60e-03 [PASS]; zero 0.00, sentinel 0.00; time 0.00s
+   B= 1000: agree 0.53; regret med 0.00e+00, P90 1.44e-03 [PASS]; zero 0.00, sentinel 0.00; time 0.00s
+   B= 2000: agree 0.80; regret med 0.00e+00, P90 7.60e-04 [PASS]; zero 0.00, sentinel 0.00; time 0.00s
+   B= 4000: agree 0.87; regret med 0.00e+00, P90 3.74e-04 [PASS]; zero 0.00, sentinel 0.00; time 0.01s
+
+ P2 d=5 (100,100) kappa=4 reference 
+   B_ref pick median 11; zero rate 0.00; sentinel rate 0.00; time 0.19s
+   B=  250: agree 0.43; regret med 0.00e+00, P90 7.63e-04 [PASS]; zero 0.00, sentinel 0.00; time 0.01s
+   B=  500: agree 0.47; regret med 0.00e+00, P90 1.12e-04 [PASS]; zero 0.00, sentinel 0.00; time 0.01s
+   B= 1000: agree 0.53; regret med 0.00e+00, P90 1.08e-04 [PASS]; zero 0.00, sentinel 0.00; time 0.02s
+   B= 2000: agree 0.70; regret med 0.00e+00, P90 6.36e-05 [PASS]; zero 0.00, sentinel 0.00; time 0.05s
+   B= 4000: agree 0.77; regret med 0.00e+00, P90 1.45e-05 [PASS]; zero 0.00, sentinel 0.00; time 0.09s
+
+ P3 d=5 (50,200) source-scarce 
+   B_ref pick median 18; zero rate 0.00; sentinel rate 0.00; time 0.19s
+   B=  250: agree 0.93; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.01s
+   B=  500: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.01s
+   B= 1000: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.02s
+   B= 2000: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.05s
+   B= 4000: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.09s
+
+ P4 d=5 (320,20) source-rich, zero-stability 
+   B_ref pick median 0; zero rate 1.00; sentinel rate 0.00; time 0.19s
+   B=  250: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 1.00, sentinel 0.00; time 0.01s
+   B=  500: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 1.00, sentinel 0.00; time 0.01s
+   B= 1000: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 1.00, sentinel 0.00; time 0.02s
+   B= 2000: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 1.00, sentinel 0.00; time 0.05s
+   B= 4000: agree 1.00; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 1.00, sentinel 0.00; time 0.10s
+
+ P5 d=10 (162,144) kappa=150 stress 
+   B_ref pick median 18; zero rate 0.00; sentinel rate 0.00; time 0.67s
+   B=  250: agree 0.57; regret med 0.00e+00, P90 1.39e-04 [PASS]; zero 0.00, sentinel 0.00; time 0.02s
+   B=  500: agree 0.63; regret med 0.00e+00, P90 5.51e-05 [PASS]; zero 0.00, sentinel 0.00; time 0.04s
+   B= 1000: agree 0.77; regret med 0.00e+00, P90 1.39e-05 [PASS]; zero 0.00, sentinel 0.00; time 0.08s
+   B= 2000: agree 0.93; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.17s
+   B= 4000: agree 0.93; regret med 0.00e+00, P90 0.00e+00 [PASS]; zero 0.00, sentinel 0.00; time 0.34s
+
+
+budgets passing the gates in every cell: [250, 500, 1000, 2000, 4000]
+smallest-passing rule: B = 250 for simulations; real-data calls stay at 4000.
+check the zero and sentinel columns against the B_ref row for
+systematic drift before freezing.
+Internal calibration only; not report evidence.
+==========================================================================
