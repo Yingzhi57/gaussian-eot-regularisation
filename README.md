@@ -71,7 +71,9 @@ The three benchmark scripts are independent and may be run separately. On the
 development machine, the allocation study took about 35--55 minutes and the
 Student-t study about 10--14 minutes. The scripts write their records and run
 summaries to the current directory. The released records in `data/` allow the
-tables and figures to be checked immediately.
+tables and figures to be checked immediately. The largest allocation CSV is
+stored with lossless gzip compression and is read directly by the portable
+`code/build_*.py` scripts.
 
 ## Data availability and reproducibility
 

@@ -29,7 +29,9 @@ dataset unless stated otherwise.
   compare no regularisation, the known-basis comparator, the dense reference
   and RBPB.
 - `data/allocation/`: 21 Gaussian designs. `geometry` identifies the commuting
-  control, moderate non-commuting pair or conditioning-stress pair.
+  control, moderate non-commuting pair or conditioning-stress pair. The CSV is
+  stored as `allocation_332_records.csv.gz`; this is lossless compression of
+  the CSV written by `code/allocation_332.py`.
 - `data/student_t/`: covariance-matched `t5` and `t3` sensitivity records at
   target-rich and source-heavy allocations.
 - `data/pilots/`: grid and bootstrap-budget calibration summaries. `regret`
@@ -38,4 +40,3 @@ dataset unless stated otherwise.
 
 NPZ files contain numeric dense-mesh risk curves, selected common multipliers
 and fixed population matrices used by the associated experiment.
-
