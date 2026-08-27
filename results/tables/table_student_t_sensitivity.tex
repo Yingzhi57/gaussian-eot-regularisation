@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Sampling law & $(n_1,n_2)$ & \shortstack{Median ratio\\IQR} &
+$\Pr(L_{\mathrm{RBPB}}<L_0)$ & Zero-selection rate \\
+\midrule
+Gaussian & $(48,192)$ & $0.8018\;[0.6973,0.9360]$ & $0.825$ & $0.000$ \\
+$t_5$ & $(48,192)$ & $0.7265\;[0.6366,0.8580]$ & $0.889$ & $0.000$ \\
+$t_3$ & $(48,192)$ & $0.7128\;[0.6429,0.8164]$ & $0.932$ & $0.000$ \\
+\addlinespace
+Gaussian & $(216,24)$ & $1.0000\;[1.0000,1.0000]$ & $0.029$ & $0.935$ \\
+$t_5$ & $(216,24)$ & $1.0000\;[1.0000,1.0000]$ & $0.031$ & $0.937$ \\
+$t_3$ & $(216,24)$ & $1.0000\;[1.0000,1.0000]$ & $0.033$ & $0.934$ \\
+\bottomrule
+\end{tabular}
+\caption{Paired loss and selection summaries for the Student-$t$ sensitivity
+study and matching Gaussian cells. The ratio compares the selected RBPB map
+with the unregularised plug-in on the same dataset. Quantile summaries are
+reported rather than variance-based Monte Carlo standard errors for the
+$t_3$ rows. The improvement probability uses the strict comparison
+$L_{\mathrm{RBPB}}<L_0$; equal-loss cases are not counted as improvements.}
+\label{tab:supp-student-t-sensitivity}
+\end{table}

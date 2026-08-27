@@ -1,0 +1,80 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+$\rho$ & \shortstack{$m_{\mathrm{KB}}^{(1)}(\rho)$\\gain (MCSE)} & \shortstack{$\widehat m_{\mathrm{dense}}$\\gain (MCSE)} & \shortstack{RBPB\\gain (MCSE)} & \shortstack{RBPB--dense normalised\\gap (MCSE)} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Commuting control}} \\
+0.25 & $15.8154\;(0.0821)$ & $22.0146\;(0.1831)$ & $21.9605\;(0.1742)$ & $0.0541\;(0.0107)$ \\
+1 & $3.4609\;(0.0648)$ & $4.8234\;(0.1383)$ & $4.8213\;(0.1373)$ & $0.0022\;(0.0100)$ \\
+3 & $0.7294\;(0.0308)$ & $1.0240\;(0.0649)$ & $0.9824\;(0.0591)$ & $0.0416\;(0.0126)$ \\
+7 & $0.0251\;(0.0098)$ & $0.0212\;(0.0147)$ & $0.0387\;(0.0104)$ & $-0.0175\;(0.0105)$ \\
+9 & $-0.0017\;(0.0044)$ & $-0.0034\;(0.0055)$ & $0.0072\;(0.0029)$ & $-0.0106\;(0.0053)$ \\
+11 & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $-0.0001\;(0.0006)$ & $0.0001\;(0.0006)$ \\
+15 & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Moderate non-commuting}} \\
+0.25 & $14.8761\;(0.0763)$ & $20.9996\;(0.1717)$ & $20.8955\;(0.1614)$ & $0.1041\;(0.0116)$ \\
+1 & $3.3417\;(0.0588)$ & $4.7536\;(0.1301)$ & $4.7150\;(0.1236)$ & $0.0386\;(0.0114)$ \\
+3 & $0.6119\;(0.0266)$ & $0.8190\;(0.0527)$ & $0.8018\;(0.0501)$ & $0.0172\;(0.0096)$ \\
+7 & $0.0140\;(0.0088)$ & $0.0058\;(0.0132)$ & $0.0054\;(0.0076)$ & $0.0004\;(0.0101)$ \\
+9 & $-0.0230\;(0.0038)$ & $0.0000\;(0.0000)$ & $0.0002\;(0.0019)$ & $-0.0002\;(0.0019)$ \\
+11 & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $-0.0004\;(0.0004)$ & $0.0004\;(0.0004)$ \\
+15 & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Conditioning stress}} \\
+0.25 & $11.5295\;(0.0709)$ & $16.5721\;(0.1670)$ & $16.3953\;(0.1461)$ & $0.1768\;(0.0240)$ \\
+1 & $2.4151\;(0.0510)$ & $3.3399\;(0.1102)$ & $3.3191\;(0.1054)$ & $0.0208\;(0.0101)$ \\
+3 & $0.4663\;(0.0234)$ & $0.6196\;(0.0479)$ & $0.5703\;(0.0415)$ & $0.0493\;(0.0112)$ \\
+7 & $0.0019\;(0.0075)$ & $0.0019\;(0.0075)$ & $-0.0009\;(0.0048)$ & $0.0028\;(0.0066)$ \\
+9 & $-0.0177\;(0.0032)$ & $0.0000\;(0.0000)$ & $-0.0004\;(0.0007)$ & $0.0004\;(0.0007)$ \\
+11 & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0001)$ & $0.0000\;(0.0001)$ \\
+15 & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ & $0.0000\;(0.0000)$ \\
+\bottomrule
+\end{tabular}
+\caption{Population-risk results for the $21$ allocation--covariance-geometry experiments underlying the left panels of Figure~\ref{fig:allocation-covariance-results}. For each decision rule, entries are percentage population-risk gains $100(1-\widehat q_p)$ relative to $m=0$, with one paired Monte Carlo standard error in parentheses; both are in percentage points. The final column is $100(\widehat q_{\mathrm{RBPB}}-\widehat q_{\mathrm{dense}})$, with its paired Monte Carlo standard error, so a positive value indicates greater estimated population risk for RBPB. The number $N_c$ of independent evaluation replications with complete paired results is $10\,000$ for $\rho=0.25$ and $5000$ otherwise.}
+\label{tab:supp-allocation-risk}
+\end{table}
+
+\clearpage
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+$\rho$ & $m_{\mathrm{KB}}^{(1)}(\rho)$ & $\widehat m_{\mathrm{dense}}$ & \shortstack{RBPB $\widehat m_B$\\median [IQR]} & \shortstack{RBPB zero-\\selection rate} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Commuting control}} \\
+0.25 & 8.6 & 18.75 & 18 [18, 18] & 0.0000 \\
+1 & 5 & 10.75 & 11 [10, 11] & 0.0000 \\
+3 & 2 & 4.25 & 4 [3, 4] & 0.0000 \\
+7 & 0.5 & 0.75 & 0.25 [0, 0.5] & 0.3602 \\
+9 & 0.2 & 0.25 & 0 [0, 0] & 0.8920 \\
+11 & 0 & 0 & 0 [0, 0] & 0.9952 \\
+15 & 0 & 0 & 0 [0, 0] & 1.0000 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Moderate non-commuting}} \\
+0.25 & 8.6 & 19 & 18 [18, 18] & 0.0000 \\
+1 & 5 & 11.125 & 11 [10, 11] & 0.0000 \\
+3 & 2 & 4 & 4 [3, 4] & 0.0000 \\
+7 & 0.5 & 0.75 & 0.25 [0, 0.5] & 0.4438 \\
+9 & 0.2 & 0 & 0 [0, 0] & 0.9352 \\
+11 & 0 & 0 & 0 [0, 0] & 0.9968 \\
+15 & 0 & 0 & 0 [0, 0] & 1.0000 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Conditioning stress}} \\
+0.25 & 8.6 & 20.625 & 18 [18, 18] & 0.0000 \\
+1 & 5 & 11 & 10 [10, 11] & 0.0000 \\
+3 & 2 & 4.125 & 3 [3, 4] & 0.0000 \\
+7 & 0.5 & 0.5 & 0 [0, 0.25] & 0.6672 \\
+9 & 0.2 & 0 & 0 [0, 0] & 0.9812 \\
+11 & 0 & 0 & 0 [0, 0] & 0.9996 \\
+15 & 0 & 0 & 0 [0, 0] & 1.0000 \\
+\bottomrule
+\end{tabular}
+\caption{Multiplier summaries for the $21$ allocation--covariance-geometry experiments underlying the right panels of Figure~\ref{fig:allocation-covariance-results}. The first two numeric columns give the allocation-specific known-basis leading comparator $m_{\mathrm{KB}}^{(1)}(\rho)$ and the independently estimated best common multiplier $\widehat m_{\mathrm{dense}}$, respectively. The RBPB column reports the median and interquartile range of the selected multiplier $\widehat m_B$; the final column is its zero-selection rate.}
+\label{tab:supp-allocation-selection}
+\end{table}

@@ -1,0 +1,28 @@
+\begin{table}[ht]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Case & \shortstack{$\widehat m_{\mathrm{dense}}$\\$\widehat m_{\mathcal M}$} & $\widehat q_{5}$ & $\widehat q_{\mathrm{dense}}$ & $\widehat q_{\mathrm{RBPB}}$ & \shortstack{RBPB $\widehat m_B$\\median [IQR]} \\
+\midrule
+Case 1 & & & & & \\
+$d=5$, $n_1=n_2=100$ & 10.875, 11 & 0.9605 (0.0006) & 0.9440 (0.0014) & 0.9443 (0.0013) & 11 [10, 11] \\
+Case 2 & & & & & \\
+$d=5$, $n_1=n_2=50$ & 11.375, 11 & 0.9215 (0.0007) & 0.8897 (0.0015) & 0.8905 (0.0013) & 10 [10, 11] \\
+Case 3 & & & & & \\
+$d=10$, $n_1=n_2=100$ & 18.875, 18 & 0.9511 (0.0003) & 0.8993 (0.0011) & 0.8997 (0.0010) & 18 [16, 18] \\
+\bottomrule
+\end{tabular}
+\caption{Balanced Gaussian benchmarks. The rows identify the three cases and
+their designs. For decision rule $p$,
+$\widehat q_p=\overline L^p/\overline L^0$ is its estimated population-risk
+ratio relative to $m=0$; $\widehat q_5$ corresponds to the fixed comparator
+$m=5$, and parentheses give one paired Monte Carlo standard error. The second
+column reports $\widehat m_{\mathrm{dense}}$, the independently estimated best
+common multiplier on the dense mesh, followed by $\widehat m_{\mathcal M}$,
+its fixed-candidate-grid counterpart included only as a grid-discretisation
+diagnostic. The last column reports the median and interquartile range of the
+RBPB selections $\widehat m_B$.}
+\label{tab:rbpb-gaussian-benchmark}
+\end{table}
