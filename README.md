@@ -27,7 +27,6 @@ one workflow:
 | `code/build_*.py` | rebuild the report tables and figures from saved records |
 | `data/` | simulation-level records and dense-mesh reference curves |
 | `results/` | report-facing figures, tables and run summaries |
-| `provenance/` | exact source files used when the saved simulations were run |
 
 ## Quick reproduction from saved records
 
@@ -83,11 +82,10 @@ records, dense-mesh reference curves and the assets used in the report.
 
 Random-number streams for population geometry, reference estimation,
 independent evaluation and the inner bootstrap are separated by fixed
-`SeedSequence` namespaces. The simulation drivers in `code/` contain
-comment-only language edits for readability. Their executable syntax is
-unchanged from the corresponding files in
-`provenance/source_before_annotation/`. The `build_*.py` scripts add portable
-repository-relative paths for rebuilding the report assets.
+`SeedSequence` namespaces. The simulation drivers in `code/` differ from the
+files used to create the archived records only in comments and docstrings;
+their executable Python syntax is unchanged. The `build_*.py` scripts add
+portable repository-relative paths for rebuilding the report assets.
 
 Column definitions are given in [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md).
 File hashes are recorded in `MANIFEST.sha256`.
