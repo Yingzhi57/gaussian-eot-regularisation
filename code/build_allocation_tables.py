@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import csv
+import gzip
 from pathlib import Path
 
 import numpy as np
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-RECORDS_PATH = REPO_ROOT / "data/allocation/allocation_332_records.csv"
+RECORDS_PATH = REPO_ROOT / "data/allocation/allocation_332_records.csv.gz"
 REFERENCE_PATH = REPO_ROOT / "data/allocation/allocation_332_reference.npz"
 OUTPUT_PATH = REPO_ROOT / "results/tables/table_332_supplementary.tex"
 
@@ -47,7 +48,7 @@ def table_entry(estimate: float, mcse: float) -> str:
 
 
 def load_cells() -> dict[tuple[str, int], dict[str, object]]:
-    with RECORDS_PATH.open(newline="") as stream:
+    with gzip.open(RECORDS_PATH, mode="rt", newline="") as stream:
         rows = [row for row in csv.DictReader(stream) if row["failure"] == ""]
 
     reference = np.load(REFERENCE_PATH, allow_pickle=False)

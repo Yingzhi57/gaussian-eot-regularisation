@@ -1,6 +1,7 @@
 """Build the supplementary Student-t figure and table from saved records."""
 
 import csv
+import gzip
 from pathlib import Path
 
 import matplotlib
@@ -12,7 +13,7 @@ import numpy as np
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 HEAVY_RECORDS = REPO_ROOT / "data/student_t/heavy_333_records.csv"
-GAUSSIAN_RECORDS = REPO_ROOT / "data/allocation/allocation_332_records.csv"
+GAUSSIAN_RECORDS = REPO_ROOT / "data/allocation/allocation_332_records.csv.gz"
 FIGURE_DIR = REPO_ROOT / "results/figures"
 TABLE_PATH = REPO_ROOT / "results/tables/table_student_t_sensitivity.tex"
 
@@ -40,7 +41,7 @@ def load_groups():
     """Combine Student-t records with the matching Gaussian evaluations."""
     with HEAVY_RECORDS.open(newline="") as stream:
         heavy = list(csv.DictReader(stream))
-    with GAUSSIAN_RECORDS.open(newline="") as stream:
+    with gzip.open(GAUSSIAN_RECORDS, mode="rt", newline="") as stream:
         gaussian = list(csv.DictReader(stream))
 
     groups = {}

@@ -1,6 +1,7 @@
 """Build the allocation--covariance figure from saved Gaussian records."""
 
 import csv
+import gzip
 from pathlib import Path
 
 import matplotlib
@@ -11,7 +12,6 @@ import numpy as np
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / "data/allocation"
 FIGURE_DIR = REPO_ROOT / "results/figures"
-SUMMARY_PATH = REPO_ROOT / "results/tables/table_332_overview.tex"
 
 GEOMS = ["G4-C", "G4-N", "G4-K"]
 ETAS = {"G4-C": 0.0, "G4-N": 0.133522, "G4-K": 0.295693}
@@ -29,7 +29,9 @@ def ratio_and_se(Lv, L0v):
 
 
 # Aggregate independent evaluation records by design.
-with (DATA_DIR / "allocation_332_records.csv").open(newline="") as stream:
+with gzip.open(
+    DATA_DIR / "allocation_332_records.csv.gz", mode="rt", newline=""
+) as stream:
     rows = [row for row in csv.DictReader(stream) if row["failure"] == ""]
 z = np.load(DATA_DIR / "allocation_332_reference.npz", allow_pickle=False)
 
@@ -53,44 +55,6 @@ for g in GEOMS:
             "m_hat": np.array([float(r["m_rbpb"]) for r in sub]),
             "n": len(sub),
         }
-
-# Write the LaTeX summary table.
-max_se = max(se for c in cells.values() for _, se in c["stats"].values())
-lines = [
-    r"\begin{table}[t]",
-    r"\centering\small",
-    r"\begin{tabular}{llrrrrrr}",
-    r"\toprule",
-    r"Geometry & $\rho=n_1/n_2$ & $m_{\mathrm{KB}}^{(1)}(\rho)$ & $\widehat m_{\mathrm{dense}}$ & "
-    r"$R_{\mathrm{KB}}/R_{0}$ & $R_{\mathrm{dense}}/R_{0}$ & "
-    r"$R_{\mathrm{RBPB}}/R_{0}$ & RBPB zero-selection rate \\",
-    r"\midrule",
-]
-for g in GEOMS:
-    for ai, rho in enumerate(RHOS):
-        c = cells[(g, ai)]
-        head = (rf"\multirow{{7}}{{*}}{{{g}}}" if ai == 0 else "")
-        lines.append(
-            f"{head} & {rho:g} & {c['m_kb']:g} & {c['m_dense']:g} & "
-            f"{c['stats']['KB'][0]:.4f} & {c['stats']['dense'][0]:.4f} & "
-            f"{c['stats']['RBPB'][0]:.4f} & {c['zero']:.3f} \\\\")
-    if g != GEOMS[-1]:
-        lines.append(r"\midrule")
-lines += [
-    r"\bottomrule",
-    r"\end{tabular}",
-    r"\caption{Population-risk ratios of the fixed known-basis reference "
-    r"$m_{\mathrm{KB}}^{(1)}(\rho)$, the independently estimated best common multiplier \widehat m_{\mathrm{dense}}"
-    r"$\widehat m_{\mathrm{dense}}$ and the RBPB selection, relative to the "
-    r"unregularised map, with the RBPB zero-selection rate; "
-    rf"paired delta-method MCSEs are at most {max_se:.4f}. "
-    r"At $\rho=11$, the displayed known-basis leading comparator is zero; "
-    r"this is not a full-matrix threshold.}",
-    r"\label{tab:allocation-332}",
-    r"\end{table}",
-]
-SUMMARY_PATH.parent.mkdir(parents=True, exist_ok=True)
-SUMMARY_PATH.write_text("\n".join(lines) + "\n")
 
 # Print a compact numerical preview.
 print(f"{'geom':6s} {'rho':>5s} {'mKB':>5s} {'m*':>7s} "
@@ -181,4 +145,5 @@ fig.tight_layout()
 FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 fig.savefig(FIGURE_DIR / "figure_332.pdf", bbox_inches="tight")
 fig.savefig(FIGURE_DIR / "figure_332.png", dpi=150, bbox_inches="tight")
-print(f"\nwritten: {SUMMARY_PATH} and {FIGURE_DIR}")
+print(f"\nwritten: {FIGURE_DIR / 'figure_332.pdf'} and "
+      f"{FIGURE_DIR / 'figure_332.png'}")
